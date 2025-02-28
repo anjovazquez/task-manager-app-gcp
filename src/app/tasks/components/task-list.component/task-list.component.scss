@@ -1,0 +1,26 @@
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.task-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+}
+
+.completed {
+    color: green;
+    font-weight: bold;
+}
+
+p {
+    padding: 20px;
+}

@@ -1,0 +1,9 @@
+<mat-toolbar color="primary" class="navbar">
+    <span class="spacer"></span>
+
+    <nav class="nav-links">
+        <a mat-button routerLink="/tasks" *ngIf="authService.user$ | async" routerLinkActive="active-link">Tasks</a>
+        <a mat-button (click)="logout()" *ngIf="authService.user$ | async">Logout</a>
+    </nav>
+</mat-toolbar>
+<router-outlet></router-outlet>

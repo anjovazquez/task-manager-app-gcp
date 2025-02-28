@@ -1,0 +1,20 @@
+<div class="container">
+    <h2>Task List</h2>
+    <button (click)="openAddTaskForm()" mat-raised-button color="primary">Add New Task</button>
+    <ul *ngIf="tasks$ | async as tasks; else noTasks">
+        <li *ngFor="let task of tasks" class="task-item">
+            <p>{{ task.title }}</p>
+            <p>{{ task.description }}</p>
+            <p>{{ task.dueDate | date }}</p>
+            <p [class.completed]="task.completed">
+                Status: {{ task.completed ? 'Completed' : 'Pending' }}
+            </p>
+            <!-- Edit and Delete Buttons -->
+            <button mat-icon-button (click)="openEditTaskForm(task)">✏️</button>
+            <button mat-icon-button (click)="deleteTask(task.id)">❌</button>
+        </li>
+    </ul>
+    <ng-template #noTasks>
+        <p>No tasks available.</p>
+    </ng-template>
+</div>

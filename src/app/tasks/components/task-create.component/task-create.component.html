@@ -1,0 +1,25 @@
+<!-- task-create.component.html -->
+
+<h2 mat-dialog-title>Create New Task</h2>
+<mat-dialog-content>
+    <div class="container">
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput [(ngModel)]="title" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <input matInput [(ngModel)]="description">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Due Date</mat-label>
+            <input matInput [(ngModel)]="dueDate" type="date">
+        </mat-form-field>
+        <mat-checkbox [(ngModel)]="completed">Completed</mat-checkbox>
+
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="cancel()">Cancel</button>
+    <button mat-button (click)="saveTask()">Save</button>
+</mat-dialog-actions>

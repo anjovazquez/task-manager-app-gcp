@@ -1,0 +1,15 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)" class="login-form">
+    <mat-form-field appearance="outline">
+      <input matInput type="email" name="email" placeholder="Email" ngModel required />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <input matInput type="password" name="password" placeholder="Password" ngModel required />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" class="login-button">Login</button>
+
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </form>  
+  <p>New user? Register <a [routerLink]="['/register']">here</a></p>
+</div>
