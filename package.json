@@ -2,13 +2,13 @@
   "name": "task-manager-app",
   "version": "0.0.0",
   "scripts": {
+    "config": "node ./config/setenv.js",
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "npm run config && ng serve",
+    "build": "npm run config && ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "config": "node ./config/setenv.js",
-    "deploy": "ng build --configuration production && firebase deploy"
+    "deploy": "npm run config && ng build --configuration production && firebase deploy"
   },
   "private": true,
   "dependencies": {
